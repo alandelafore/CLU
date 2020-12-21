@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="modelModelStoreContainer" CdmEntityContainer="modelEntities">
+    <EntitySetMapping Name="Domicilio">
+      <EntityTypeMapping TypeName="modelModel.Domicilio">
+        <MappingFragment StoreEntitySet="Domicilio">
+          <ScalarProperty Name="IDDomicilio" ColumnName="IDDomicilio" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="NumeroCalle" ColumnName="NumeroCalle" />
+          <ScalarProperty Name="Piso" ColumnName="Piso" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="DatosAdicionales" ColumnName="DatosAdicionales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedioDeVidaLicito">
+      <EntityTypeMapping TypeName="modelModel.MedioDeVidaLicito">
+        <MappingFragment StoreEntitySet="MedioDeVidaLicito">
+          <ScalarProperty Name="IDMedioDeVidaLicito" ColumnName="IDMedioDeVidaLicito" />
+          <ScalarProperty Name="URLImagen" ColumnName="URLImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pago">
+      <EntityTypeMapping TypeName="modelModel.Pago">
+        <MappingFragment StoreEntitySet="Pago">
+          <ScalarProperty Name="IDPago" ColumnName="IDPago" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="MedioPago" ColumnName="MedioPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolicitudLegitimoUsuario">
+      <EntityTypeMapping TypeName="modelModel.SolicitudLegitimoUsuario">
+        <MappingFragment StoreEntitySet="SolicitudLegitimoUsuario">
+          <ScalarProperty Name="IDSolicitudLegitimoUsuario" ColumnName="IDSolicitudLegitimoUsuario" />
+          <ScalarProperty Name="CodgioSolicitudLegitimoUsuario" ColumnName="CodgioSolicitudLegitimoUsuario" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="DomicilioReal" ColumnName="DomicilioReal" />
+          <ScalarProperty Name="GuardaDeArmas" ColumnName="GuardaDeArmas" />
+          <ScalarProperty Name="CategoriaSolicitada" ColumnName="CategoriaSolicitada" />
+          <ScalarProperty Name="CategoriaMedidasSeguridad" ColumnName="CategoriaMedidasSeguridad" />
+          <ScalarProperty Name="NumeroCredencialAnterior" ColumnName="NumeroCredencialAnterior" />
+          <ScalarProperty Name="IDPago" ColumnName="IDPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="modelModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="CUIL" ColumnName="CUIL" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="DomicilioEspecial" ColumnName="DomicilioEspecial" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="MedioDeVidaLicito" ColumnName="MedioDeVidaLicito" />
+          <ScalarProperty Name="Fuerza" ColumnName="Fuerza" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="IdoneidadTiro" ColumnName="IdoneidadTiro" />
+          <ScalarProperty Name="AptoFisico" ColumnName="AptoFisico" />
+          <ScalarProperty Name="AptoPsico" ColumnName="AptoPsico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Domicilio">
+    <Key>
+      <PropertyRef Name="IDDomicilio" />
+    </Key>
+    <Property Name="IDDomicilio" Type="Int32" Nullable="false" />
+    <Property Name="Calle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumeroCalle" Type="Int32" Nullable="false" />
+    <Property Name="Piso" Type="Int32" />
+    <Property Name="Departamento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Provincia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Localidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoPostal" Type="Int32" Nullable="false" />
+    <Property Name="DatosAdicionales" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SolicitudLegitimoUsuario" Relationship="Self.FK__Solicitud__Domic__04E4BC85" FromRole="Domicilio" ToRole="SolicitudLegitimoUsuario" />
+    <NavigationProperty Name="SolicitudLegitimoUsuario1" Relationship="Self.FK__Solicitud__Guard__05D8E0BE" FromRole="Domicilio" ToRole="SolicitudLegitimoUsuario" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Domicil__00200768" FromRole="Domicilio" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="MedioDeVidaLicito">
+    <Key>
+      <PropertyRef Name="IDMedioDeVidaLicito" />
+    </Key>
+    <Property Name="IDMedioDeVidaLicito" Type="Int32" Nullable="false" />
+    <Property Name="URLImagen" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__MedioDe__01142BA1" FromRole="MedioDeVidaLicito" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Pago">
+    <Key>
+      <PropertyRef Name="IDPago" />
+    </Key>
+    <Property Name="IDPago" Type="Int32" Nullable="false" />
+    <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MedioPago" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SolicitudLegitimoUsuario" Relationship="Self.FK__Solicitud__IDPag__06CD04F7" FromRole="Pago" ToRole="SolicitudLegitimoUsuario" />
+  </EntityType>
+  <EntityType Name="SolicitudLegitimoUsuario">
+    <Key>
+      <PropertyRef Name="IDSolicitudLegitimoUsuario" />
+    </Key>
+    <Property Name="IDSolicitudLegitimoUsuario" Type="Int32" Nullable="false" />
+    <Property Name="CodgioSolicitudLegitimoUsuario" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+    <Property Name="DomicilioReal" Type="Int32" Nullable="false" />
+    <Property Name="GuardaDeArmas" Type="Int32" Nullable="false" />
+    <Property Name="CategoriaSolicitada" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoriaMedidasSeguridad" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumeroCredencialAnterior" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDPago" Type="Int32" />
+    <NavigationProperty Name="Domicilio" Relationship="Self.FK__Solicitud__Domic__04E4BC85" FromRole="SolicitudLegitimoUsuario" ToRole="Domicilio" />
+    <NavigationProperty Name="Domicilio1" Relationship="Self.FK__Solicitud__Guard__05D8E0BE" FromRole="SolicitudLegitimoUsuario" ToRole="Domicilio" />
+    <NavigationProperty Name="Pago" Relationship="Self.FK__Solicitud__IDPag__06CD04F7" FromRole="SolicitudLegitimoUsuario" ToRole="Pago" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Solicitud__IDUsu__03F0984C" FromRole="SolicitudLegitimoUsuario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IDUsuario" />
+    </Key>
+    <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CUIL" Type="Int32" Nullable="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DomicilioEspecial" Type="Int32" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedioDeVidaLicito" Type="Int32" Nullable="false" />
+    <Property Name="Fuerza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdoneidadTiro" Type="Boolean" />
+    <Property Name="AptoFisico" Type="Boolean" />
+    <Property Name="AptoPsico" Type="Boolean" />
+    <NavigationProperty Name="Domicilio" Relationship="Self.FK__Usuario__Domicil__00200768" FromRole="Usuario" ToRole="Domicilio" />
+    <NavigationProperty Name="MedioDeVidaLicito1" Relationship="Self.FK__Usuario__MedioDe__01142BA1" FromRole="Usuario" ToRole="MedioDeVidaLicito" />
+    <NavigationProperty Name="SolicitudLegitimoUsuario" Relationship="Self.FK__Solicitud__IDUsu__03F0984C" FromRole="Usuario" ToRole="SolicitudLegitimoUsuario" />
+  </EntityType>
+  <Association Name="FK__Solicitud__Domic__04E4BC85">
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
+    <End Role="SolicitudLegitimoUsuario" Type="Self.SolicitudLegitimoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicilio">
+        <PropertyRef Name="IDDomicilio" />
+      </Principal>
+      <Dependent Role="SolicitudLegitimoUsuario">
+        <PropertyRef Name="DomicilioReal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Guard__05D8E0BE">
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
+    <End Role="SolicitudLegitimoUsuario" Type="Self.SolicitudLegitimoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicilio">
+        <PropertyRef Name="IDDomicilio" />
+      </Principal>
+      <Dependent Role="SolicitudLegitimoUsuario">
+        <PropertyRef Name="GuardaDeArmas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__Domicil__00200768">
+    <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicilio">
+        <PropertyRef Name="IDDomicilio" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="DomicilioEspecial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__MedioDe__01142BA1">
+    <End Role="MedioDeVidaLicito" Type="Self.MedioDeVidaLicito" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioDeVidaLicito">
+        <PropertyRef Name="IDMedioDeVidaLicito" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="MedioDeVidaLicito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__IDPag__06CD04F7">
+    <End Role="Pago" Type="Self.Pago" Multiplicity="0..1" />
+    <End Role="SolicitudLegitimoUsuario" Type="Self.SolicitudLegitimoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pago">
+        <PropertyRef Name="IDPago" />
+      </Principal>
+      <Dependent Role="SolicitudLegitimoUsuario">
+        <PropertyRef Name="IDPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__IDUsu__03F0984C">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="SolicitudLegitimoUsuario" Type="Self.SolicitudLegitimoUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IDUsuario" />
+      </Principal>
+      <Dependent Role="SolicitudLegitimoUsuario">
+        <PropertyRef Name="IDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="modelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Domicilio" EntityType="Self.Domicilio" />
+    <EntitySet Name="MedioDeVidaLicito" EntityType="Self.MedioDeVidaLicito" />
+    <EntitySet Name="Pago" EntityType="Self.Pago" />
+    <EntitySet Name="SolicitudLegitimoUsuario" EntityType="Self.SolicitudLegitimoUsuario" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Solicitud__Domic__04E4BC85" Association="Self.FK__Solicitud__Domic__04E4BC85">
+      <End Role="Domicilio" EntitySet="Domicilio" />
+      <End Role="SolicitudLegitimoUsuario" EntitySet="SolicitudLegitimoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Guard__05D8E0BE" Association="Self.FK__Solicitud__Guard__05D8E0BE">
+      <End Role="Domicilio" EntitySet="Domicilio" />
+      <End Role="SolicitudLegitimoUsuario" EntitySet="SolicitudLegitimoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__Domicil__00200768" Association="Self.FK__Usuario__Domicil__00200768">
+      <End Role="Domicilio" EntitySet="Domicilio" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__MedioDe__01142BA1" Association="Self.FK__Usuario__MedioDe__01142BA1">
+      <End Role="MedioDeVidaLicito" EntitySet="MedioDeVidaLicito" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__IDPag__06CD04F7" Association="Self.FK__Solicitud__IDPag__06CD04F7">
+      <End Role="Pago" EntitySet="Pago" />
+      <End Role="SolicitudLegitimoUsuario" EntitySet="SolicitudLegitimoUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__IDUsu__03F0984C" Association="Self.FK__Solicitud__IDUsu__03F0984C">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="SolicitudLegitimoUsuario" EntitySet="SolicitudLegitimoUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\CLU.Datos.dll.config
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\CLU.Datos.dll
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\CLU.Datos.pdb
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\EntityFramework.dll
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\EntityFramework.xml
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\obj\Debug\CLU.Datos.csproj.CopyComplete
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\obj\Debug\CLU.Datos.dll
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\obj\Debug\CLU.Datos.pdb
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\obj\Debug\CLU.Datos.csprojAssemblyReference.cache
+C:\Users\abaral\source\repos\CLU\CLUServicio\CLU.Datos\obj\Debug\CLU.Datos.csproj.CoreCompileInputs.cache
